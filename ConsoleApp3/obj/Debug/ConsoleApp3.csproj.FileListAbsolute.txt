@@ -1,0 +1,12 @@
+C:\Users\borim\source\repos\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe.config
+C:\Users\borim\source\repos\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.exe
+C:\Users\borim\source\repos\ConsoleApp3\ConsoleApp3\bin\Debug\ConsoleApp3.pdb
+C:\Users\borim\source\repos\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.csprojAssemblyReference.cache
+C:\Users\borim\source\repos\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.exe
+C:\Users\borim\source\repos\ConsoleApp3\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
+C:\Users\borim\OneDrive\Desktop\ConsoleApp3\bin\Debug\ConsoleApp3.exe.config
+C:\Users\borim\OneDrive\Desktop\ConsoleApp3\bin\Debug\ConsoleApp3.exe
+C:\Users\borim\OneDrive\Desktop\ConsoleApp3\bin\Debug\ConsoleApp3.pdb
+C:\Users\borim\OneDrive\Desktop\ConsoleApp3\obj\Debug\ConsoleApp3.csprojAssemblyReference.cache
+C:\Users\borim\OneDrive\Desktop\ConsoleApp3\obj\Debug\ConsoleApp3.exe
+C:\Users\borim\OneDrive\Desktop\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
