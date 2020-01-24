@@ -7,19 +7,25 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp3
 {
+    interface ISaveManager
+    {
+        void WriteLine(string line);
+        void WriteObject(IWritableObject obj);
+    }
+
     interface IWritableObject
     {
         void Write(SaveManager man);
     }
 
-    class SaveManager
+    class SaveManager: ISaveManager
     {
         FileInfo file;
 
         public SaveManager(string filename)
         {
             file = new FileInfo(filename);
-            file.CreateText();
+             
         }
 
         public void WriteLine(string line)
