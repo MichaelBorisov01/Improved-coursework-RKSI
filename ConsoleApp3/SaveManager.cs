@@ -10,22 +10,22 @@ namespace ConsoleApp3
     interface ISaveManager
     {
         void WriteLine(string line);
-        void WriteObject(IWritableObject obj);
+        void WriteObject(string path, IWritableObject obj);
     }
 
     interface IWritableObject
     {
-        void Write(SaveManager man);
+        void Write(string path, SaveManager man);
     }
 
     class SaveManager: ISaveManager
     {
         FileInfo file;
+        DirectoryInfo directory;
 
-        public SaveManager(string filename)
+        public SaveManager(string dirname)
         {
-            file = new FileInfo(filename);
-             
+            directory = Directory.CreateDirectory(dirname);
         }
 
         public void WriteLine(string line)
@@ -33,12 +33,13 @@ namespace ConsoleApp3
             StreamWriter output = file.AppendText();
             output.WriteLine(line);
             output.Close();
-
         }
 
-        public void WriteObject(IWritableObject obj)
+        public void WriteObject(string path, IWritableObject obj)
         {
-            obj.Write(this);
+            file = new FileInfo(Path.Combine(directory.FullName,path, ".txt"));
+            file.CreateText().Close();
+            obj.Write(path, this);
         }
     }
 
