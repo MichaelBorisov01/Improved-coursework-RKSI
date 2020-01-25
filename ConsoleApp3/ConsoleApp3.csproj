@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Student.cs" />
+    <Compile Include="LoadManager.cs" />
     <Compile Include="SaveManager.cs" />
     <Compile Include="Files.cs" />
     <Compile Include="Zap.cs" />
