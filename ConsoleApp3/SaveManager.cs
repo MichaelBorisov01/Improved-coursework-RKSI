@@ -41,6 +41,8 @@ namespace ConsoleApp3
             file.CreateText().Close();
             obj.Write(path, this);
         }
+
+         
     }
 
 }

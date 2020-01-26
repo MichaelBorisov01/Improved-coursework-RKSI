@@ -2,7 +2,7 @@
  
 namespace ConsoleApp3
 {
-    class Sale
+    class Sale:Kat
     {
          DateTime dateOfSale = new DateTime();
          int kolvo_sale;

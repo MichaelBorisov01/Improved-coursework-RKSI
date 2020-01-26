@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace ConsoleApp3
 {
-    class Zap
+    class Zap:Sale
     {
         private string name;
         private float price;
@@ -148,7 +148,7 @@ public void fileWriterZap(string prefix, SaveManager man)
                 man.WriteObject($"{prefix}\\{prefix}sale{j}", sales[j]);
             }
             for (int j = 0; j < kats.Count; j++)
-            {
+            { 
                 man.WriteObject($"{prefix}\\{prefix}kat{j}", kats[j]);
             }
         }
@@ -157,8 +157,8 @@ public void fileWriterZap(string prefix, SaveManager man)
         {
             man.WriteLine($"Дата продажи запчасти: {getDateOfSale() }");
             man.WriteLine($"Кол-во проданных запчастей: {getKolvo_sale()}");
-            man.Close();
-            for (int j = 0; j < sales.Count; j++)
+             
+            for (int j = 0; j < sales.Count; j++) 
             {
                 man.WriteObject($"{prefix}\\{prefix}sale{j}", sales[j]);
             }
@@ -172,7 +172,7 @@ public void fileWriterZap(string prefix, SaveManager man)
         {
             man.WriteLine($"Наименование категории: {GetNumberOfKat()}");
             man.WriteLine($"Процент надбавки к цене запчасти: {getProc()}");
-            man.Close();
+             
             for (int j = 0; j < sales.Count; j++)
             {
                 man.WriteObject($"{prefix}\\{prefix}sale{j}", sales[j]);
