@@ -92,19 +92,24 @@ namespace ConsoleApp3
             {
                 DirectoryInfo dir;
                 dir = Directory.CreateDirectory($@"{file.dir}\DIR\zap{i}");
-                file.fileWriterZap($"zap{i}\\zap{i}", zap[i]);
                  
-                for (int j = 0; j < zap[i].sales.Count; j++)
-                {
-                    file.fileWriterSale($"zap{i}\\zap{i}sale{j}", zap[i].sales[j]);
-                }
-                for (int j = 0; j < zap[i].kats.Count; j++)
-                {
-                    file.fileWriterKat($"zap{i}\\zap{i}kat{j}", zap[i].kats[j]);
-                }
+
+
+                //file.fileWriterZap($"zap{i}\\zap{i}", zap[i]);
+                 
+                //for (int j = 0; j < zap[i].sales.Count; j++)
+                //{
+                //    file.fileWriterSale($"zap{i}\\zap{i}sale{j}", zap[i].sales[j]);
+                //}
+                //for (int j = 0; j < zap[i].kats.Count; j++)
+                //{
+                //    file.fileWriterKat($"zap{i}\\zap{i}kat{j}", zap[i].kats[j]);
+                //}
             }
             Console.WriteLine("Запись завершена!");
         }
+
+
         static public void readFile(Files file)
         {
 

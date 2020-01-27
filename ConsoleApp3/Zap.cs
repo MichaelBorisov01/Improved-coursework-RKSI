@@ -137,7 +137,7 @@ namespace ConsoleApp3
 
 
 
-public void fileWriterZap(string prefix, SaveManager man)
+        public void fileWriterZap(string prefix, SaveManager man)
         {
             man.WriteLine($"Наименование запчасти: {getName()}");
             man.WriteLine($"Цена запчасти: {getPrice()}");
