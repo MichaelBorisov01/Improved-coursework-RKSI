@@ -42,7 +42,10 @@ namespace ConsoleApp3
             obj.Write(path, this);
         }
 
-         
+        internal void WriteObject(string v, Kat kat)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

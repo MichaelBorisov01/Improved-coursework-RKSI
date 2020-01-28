@@ -3,7 +3,7 @@
 
 namespace ConsoleApp3
 {
-    class Kat
+    class Kat: ISaveManager
     {
         private int numberOfKat;
         private float proc;
@@ -45,6 +45,16 @@ namespace ConsoleApp3
         public float getProc()
         {
             return proc;
+        }
+
+        public void WriteLine(string line)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WriteObject(string path, IWritableObject obj)
+        {
+            throw new NotImplementedException();
         }
     }
 

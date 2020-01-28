@@ -2,7 +2,7 @@
  
 namespace ConsoleApp3
 {
-    class Sale:Kat
+    class Sale:Kat, ISaveManager
     {
          DateTime dateOfSale = new DateTime();
          int kolvo_sale;
@@ -63,6 +63,16 @@ namespace ConsoleApp3
         public int getKolvo_sale()
         {
             return kolvo_sale;
+        }
+
+        public void WriteLine(string line)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void WriteObject(string path, IWritableObject obj)
+        {
+            throw new NotImplementedException();
         }
     }
 }

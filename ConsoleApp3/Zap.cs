@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace ConsoleApp3
 {
-    class Zap:Sale
+    class Zap:Sale, ISaveManager
     {
         private string name;
         private float price;
@@ -150,7 +150,7 @@ namespace ConsoleApp3
             for (int j = 0; j < kats.Count; j++)
             { 
                 man.WriteObject($"{prefix}\\{prefix}kat{j}", kats[j]);
-            }
+            }  
         }
 
         public void fileWriterSale(string prefix, SaveManager man)
@@ -164,6 +164,7 @@ namespace ConsoleApp3
             }
             for (int j = 0; j < kats.Count; j++)
             {
+
                 man.WriteObject($"{prefix}\\{prefix}kat{j}", kats[j]);
             }
         }
@@ -183,6 +184,9 @@ namespace ConsoleApp3
             }
         }
 
+        
+
+        
     }
 }
  

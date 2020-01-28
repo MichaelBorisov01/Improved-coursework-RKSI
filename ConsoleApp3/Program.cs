@@ -92,9 +92,12 @@ namespace ConsoleApp3
             {
                 DirectoryInfo dir;
                 dir = Directory.CreateDirectory($@"{file.dir}\DIR\zap{i}");
+
                  
-
-
+                Zap z = new Zap();
+                z.fileWriterKat(i);
+                z.fileWriterSale(i);
+                z.fileWriterZap(i, );
                 //file.fileWriterZap($"zap{i}\\zap{i}", zap[i]);
                  
                 //for (int j = 0; j < zap[i].sales.Count; j++)
