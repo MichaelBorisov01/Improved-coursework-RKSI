@@ -3,7 +3,7 @@
 
 namespace ConsoleApp3
 {
-    class Kat: ISaveManager
+    class Kat: IWritableObject
     {
         private int numberOfKat;
         private float proc;
@@ -47,14 +47,10 @@ namespace ConsoleApp3
             return proc;
         }
 
-        public void WriteLine(string line)
+        public void Write(string path, SaveManager man)
         {
-            throw new NotImplementedException();
-        }
-
-        public void WriteObject(string path, IWritableObject obj)
-        {
-            throw new NotImplementedException();
+            man.WriteLine($"Наименование категории: {GetNumberOfKat()}");
+            man.WriteLine($"Процент надбавки к цене запчасти: {getProc()}");
         }
     }
 

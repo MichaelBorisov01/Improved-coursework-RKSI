@@ -37,14 +37,9 @@ namespace ConsoleApp3
 
         public void WriteObject(string path, IWritableObject obj)
         {
-            file = new FileInfo(Path.Combine(directory.FullName,path, ".txt"));
+            file = new FileInfo(Path.Combine(directory.FullName, path+".txt"));
             file.CreateText().Close();
             obj.Write(path, this);
-        }
-
-        internal void WriteObject(string v, Kat kat)
-        {
-            throw new NotImplementedException();
         }
     }
 

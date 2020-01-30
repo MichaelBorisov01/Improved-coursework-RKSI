@@ -13,9 +13,10 @@ C:\Users\borim\OneDrive\Desktop\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
 C:\Users\Student\Colledge\ConsoleApp3\bin\Debug\ConsoleApp3.exe.config
 C:\Users\Student\Colledge\ConsoleApp3\bin\Debug\ConsoleApp3.exe
 C:\Users\Student\Colledge\ConsoleApp3\bin\Debug\ConsoleApp3.pdb
-C:\Users\Student\Colledge\ConsoleApp3\obj\Debug\ConsoleApp3.csprojResolveAssemblyReference.cache
 C:\Users\Student\Colledge\ConsoleApp3\obj\Debug\ConsoleApp3.exe
 C:\Users\Student\Colledge\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
 C:\Users\borim\Colledge\Colledge\ConsoleApp3\obj\Debug\ConsoleApp3.csprojAssemblyReference.cache
 C:\Users\borim\Colledge\Colledge\ConsoleApp3\obj\Debug\ConsoleApp3.exe
 C:\Users\borim\Colledge\Colledge\ConsoleApp3\obj\Debug\ConsoleApp3.pdb
+C:\Users\Student\Colledge\ConsoleApp3\obj\Debug\ConsoleApp3.csprojAssemblyReference.cache
+C:\Users\Student\Colledge\ConsoleApp3\obj\Debug\ConsoleApp3.csproj.CoreCompileInputs.cache

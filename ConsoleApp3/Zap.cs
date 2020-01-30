@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace ConsoleApp3
 {
-    class Zap:Sale, ISaveManager
+    class Zap:Sale, IWritableObject
     {
         private string name;
         private float price;
@@ -139,54 +139,44 @@ namespace ConsoleApp3
 
         public void fileWriterZap(string prefix, SaveManager man)
         {
+            
+        }
+
+        public void fileWriterSale(string prefix, SaveManager man)
+        {
+
+             
+        }
+
+        public void fileWriterKat(string prefix, SaveManager man)
+        {
+
+             
+            for (int j = 0; j < sales.Count; j++)
+            {
+                man.WriteObject($"{prefix}\\{prefix}sale{j}", sales[j]);
+            }
+            for (int j = 0; j < kats.Count; j++)
+            {
+                man.WriteObject($"{prefix}\\{prefix}kat{j}", kats[j]);
+            }
+        }
+
+        public void Write(string path, SaveManager man)
+        {
             man.WriteLine($"Наименование запчасти: {getName()}");
             man.WriteLine($"Цена запчасти: {getPrice()}");
             man.WriteLine($"Кол - во запчастей на складе: {getKolvo_specific()}");
 
             for (int j = 0; j < sales.Count; j++)
             {
-                man.WriteObject($"{prefix}\\{prefix}sale{j}", sales[j]);
-            }
-            for (int j = 0; j < kats.Count; j++)
-            { 
-                man.WriteObject($"{prefix}\\{prefix}kat{j}", kats[j]);
-            }  
-        }
-
-        public void fileWriterSale(string prefix, SaveManager man)
-        {
-            man.WriteLine($"Дата продажи запчасти: {getDateOfSale() }");
-            man.WriteLine($"Кол-во проданных запчастей: {getKolvo_sale()}");
-             
-            for (int j = 0; j < sales.Count; j++) 
-            {
-                man.WriteObject($"{prefix}\\{prefix}sale{j}", sales[j]);
+                man.WriteObject(path+$"sale{j}", sales[j]);
             }
             for (int j = 0; j < kats.Count; j++)
             {
-
-                man.WriteObject($"{prefix}\\{prefix}kat{j}", kats[j]);
+                man.WriteObject(path+$"kat{j}", kats[j]);
             }
         }
-
-        public void fileWriterKat(string prefix, SaveManager man)
-        {
-            man.WriteLine($"Наименование категории: {GetNumberOfKat()}");
-            man.WriteLine($"Процент надбавки к цене запчасти: {getProc()}");
-             
-            for (int j = 0; j < sales.Count; j++)
-            {
-                man.WriteObject($"{prefix}\\{prefix}sale{j}", sales[j]);
-            }
-            for (int j = 0; j < kats.Count; j++)
-            {
-                man.WriteObject($"{prefix}\\{prefix}kat{j}", kats[j]);
-            }
-        }
-
-        
-
-        
     }
 }
  

@@ -14,7 +14,7 @@ namespace ConsoleApp3
             int globalAnswer = 0;
             bool returnWhile = true;
             Files file = new Files();
-             
+            SaveManager save = new SaveManager("DIR");
             while (returnWhile)
             {
                 Console.WriteLine("Выберете что сделать" +
@@ -58,14 +58,16 @@ namespace ConsoleApp3
                                         answer = ChangeInfo.changeObject(zap);
                                     } while (answer != 0);
                                     break;
-                                //Добавление ифнормации
+                               
+                                    //Добавление ифнормации
                                 case 2:
                                     do
                                     {
                                         answer = ChangeInfo.AddObject(zap);
                                     } while (answer != 0);
                                     break;
-                                //Удаление информации
+                                
+                                    //Удаление информации
                                 case 3:
                                     do
                                     {
@@ -74,8 +76,9 @@ namespace ConsoleApp3
                                     break;
                             }
                         } while (answer != 0);
+                        
                         //Запись в файл
-                        writeInFile(count, zap, file);
+                        writeInFile(count, zap, save);
                         break;
 
                     default:
@@ -84,22 +87,19 @@ namespace ConsoleApp3
                 }
             }
         }
-        static public void writeInFile(int count, Zap[] zap, Files file)
+        static public void writeInFile(int count, Zap[] zap, SaveManager man)
         {
-            file.createDirectory();
-            file.cleanDirectory();
+            //file.createDirectory();
+            //file.cleanDirectory();
             for (int i = 0; i < count; i++)
             {
-                DirectoryInfo dir;
-                dir = Directory.CreateDirectory($@"{file.dir}\DIR\zap{i}");
+                //DirectoryInfo dir;
+                //dir = Directory.CreateDirectory($@"{file.dir}\DIR\zap{i}");
 
-                 
-                Zap z = new Zap();
-                z.fileWriterKat(i);
-                z.fileWriterSale(i);
-                z.fileWriterZap(i, );
+
+                man.WriteObject($@"zap{i}\zap{i}", zap[i]);
                 //file.fileWriterZap($"zap{i}\\zap{i}", zap[i]);
-                 
+
                 //for (int j = 0; j < zap[i].sales.Count; j++)
                 //{
                 //    file.fileWriterSale($"zap{i}\\zap{i}sale{j}", zap[i].sales[j]);
