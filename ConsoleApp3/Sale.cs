@@ -71,6 +71,11 @@ namespace ConsoleApp3
             man.WriteLine($"Дата продажи запчасти: {getDateOfSale() }");
             man.WriteLine($"Кол-во проданных запчастей: {getKolvo_sale()}");
         }
+
+        //public void Read(string path, LoadManager man)
+        //{
+        //    Console.WriteLine("============Продажа===========");
+        //}
     }
 }
  

@@ -126,19 +126,19 @@ namespace ConsoleApp3
             return name;
         }
 
-        public float getPrice()
+        public float GetPrice()
         {
             return price;
         }
 
-        public int getKolvo_specific()
+        public int GetKolvo_specific()
         {
             return kolvo_specific;
         }
          
  
 
-        public void fileWriterKat(string prefix, SaveManager man)
+        public void FileWriterKat(string prefix, SaveManager man)
         {
 
              
@@ -156,8 +156,8 @@ namespace ConsoleApp3
         public void Write(string path, SaveManager man)
         {
             man.WriteLine($"Наименование запчасти: {getName()}");
-            man.WriteLine($"Цена запчасти: {getPrice()}");
-            man.WriteLine($"Кол - во запчастей на складе: {getKolvo_specific()}");
+            man.WriteLine($"Цена запчасти: {GetPrice()}");
+            man.WriteLine($"Кол - во запчастей на складе: {GetKolvo_specific()}");
 
             for (int j = 0; j < sales.Count; j++)
             {
@@ -168,6 +168,13 @@ namespace ConsoleApp3
                 man.WriteObject(path+$"kat{j}", kats[j]);
             }
         }
+
+        //public void Read(string path, LoadManager man)
+        //{
+        //    Console.WriteLine("==========Запчасть==========");
+        //}
+
+
     }
 }
  

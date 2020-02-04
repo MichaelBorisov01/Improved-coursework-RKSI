@@ -20,6 +20,7 @@ namespace ConsoleApp3
 
     class SaveManager : ISaveManager
     {
+
         FileInfo file;
         DirectoryInfo directory;
 

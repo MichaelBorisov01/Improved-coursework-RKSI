@@ -52,6 +52,12 @@ namespace ConsoleApp3
             man.WriteLine($"Наименование категории: {GetNumberOfKat()}");
             man.WriteLine($"Процент надбавки к цене запчасти: {getProc()}");
         }
+        
+        //public void Read(string path, LoadManager man)
+        //{
+        //    Console.WriteLine("====Информация о категориях====");
+             
+        //}
     }
 
     

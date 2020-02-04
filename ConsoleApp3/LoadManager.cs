@@ -15,7 +15,9 @@ namespace ConsoleApp3
     }
 
     interface IReadbleObject
-    { }
+    {
+        //void Read(string path, LoadManager man);
+    }
 
     interface IReadableObjectLoader
     {
@@ -23,9 +25,11 @@ namespace ConsoleApp3
     }
     class LoadManager : ILoadManager
     {
-        public DirectoryInfo directory;
+        
         FileInfo file;
+        public DirectoryInfo directory;
         StreamReader input;
+        
         public LoadManager(string dirname)
         {
             directory = Directory.CreateDirectory(dirname);
@@ -68,6 +72,8 @@ namespace ConsoleApp3
         public void ReadObject(string path, IReadbleObject obj)
         {
             file = new FileInfo(Path.Combine(directory.FullName, path + ".txt"));
+          
+            //obj.Read(path, this);
         }
     }
 }

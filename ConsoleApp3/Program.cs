@@ -127,7 +127,8 @@ namespace ConsoleApp3
             foreach (DirectoryInfo d in man.directory.GetDirectories())
             {
                 Console.WriteLine($"Автозапчасть № {i}");
-                man.ReadObject($"zap{i}\\zap{i}", zap[i]);
+
+                man.ReadObject($@"zap{i}\\zap{i}", zap[i]);
 
                 //file.fileReaderZap($"zap{i}\\zap{i}");
 
@@ -151,6 +152,8 @@ namespace ConsoleApp3
                 //    Console.WriteLine("******************************");
                 //    j++;
                 //}
+
+                
                 i++;
             }
             Console.WriteLine("Чтение завершено");
