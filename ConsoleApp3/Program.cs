@@ -14,7 +14,9 @@ namespace ConsoleApp3
             int globalAnswer = 0;
             bool returnWhile = true;
             Files file = new Files();
+
             SaveManager save = new SaveManager("DIR");
+
             while (returnWhile)
             {
                 Console.WriteLine("Выберете что сделать" +
@@ -25,7 +27,7 @@ namespace ConsoleApp3
                     case 1:
                         //Чтение из файлов
                         file.createDirectory();
-                        readFile(file);
+                        readFile(new LoadManager("DIR"));
                         break;
                     case 2:
                         Console.WriteLine("Введите кол - во запчастей: ");
@@ -91,13 +93,17 @@ namespace ConsoleApp3
         {
             //file.createDirectory();
             //file.cleanDirectory();
+
             for (int i = 0; i < count; i++)
+
             {
                 //DirectoryInfo dir;
                 //dir = Directory.CreateDirectory($@"{file.dir}\DIR\zap{i}");
 
 
                 man.WriteObject($@"zap{i}\zap{i}", zap[i]);
+                
+               
                 //file.fileWriterZap($"zap{i}\\zap{i}", zap[i]);
 
                 //for (int j = 0; j < zap[i].sales.Count; j++)
@@ -113,38 +119,42 @@ namespace ConsoleApp3
         }
 
 
-        static public void readFile(Files file)
+        static public void readFile(LoadManager man)
         {
 
             int i = 0;
-            foreach (DirectoryInfo d in file.directory.GetDirectories())
+            Zap[] zap = new Zap[man.directory.GetDirectories().Length];
+            foreach (DirectoryInfo d in man.directory.GetDirectories())
             {
                 Console.WriteLine($"Автозапчасть № {i}");
-                file.fileReaderZap($"zap{i}\\zap{i}");
-                 
-                Console.WriteLine("Продажи:");
-                string[] searchSale = Directory.GetFiles($@"{file.dir}\DIR\zap{i}\", $"zap{i}sale{i}*");
-                string[] searchKat = Directory.GetFiles($@"{file.dir}\DIR\zap{i}\", $"zap{i}kat{i}*");
-                int j = 0;
-                foreach (string f in searchSale)
-                {
-                    Console.WriteLine($"Продажа № {j}");
-                    file.fileReaderSale($"zap{i}\\zap{i}sale{j}");
-                    Console.WriteLine("******************************");
-                    j++;
-                }
-                Console.WriteLine("Категории:");
-                j = 0;
-                foreach (string f in searchKat)
-                {
-                    Console.WriteLine($"Категория № {j}");
-                    file.fileReaderKat($"zap{i}\\zap{i}kat{j}");
-                    Console.WriteLine("******************************");
-                    j++;
-                }
+                man.ReadObject($"zap{i}\\zap{i}", zap[i]);
+
+                //file.fileReaderZap($"zap{i}\\zap{i}");
+
+                //Console.WriteLine("Продажи:");
+                //string[] searchSale = Directory.GetFiles($@"{file.dir}\DIR\zap{i}\", $"zap{i}sale{i}*");
+                //string[] searchKat = Directory.GetFiles($@"{file.dir}\DIR\zap{i}\", $"zap{i}kat{i}*");
+                //int j = 0;
+                //foreach (string f in searchSale)
+                //{
+                //    Console.WriteLine($"Продажа № {j}");
+                //    file.fileReaderSale($"zap{i}\\zap{i}sale{j}");
+                //    Console.WriteLine("******************************");
+                //    j++;
+                //}
+                //Console.WriteLine("Категории:");
+                //j = 0;
+                //foreach (string f in searchKat)
+                //{
+                //    Console.WriteLine($"Категория № {j}");
+                //    file.fileReaderKat($"zap{i}\\zap{i}kat{j}");
+                //    Console.WriteLine("******************************");
+                //    j++;
+                //}
                 i++;
             }
             Console.WriteLine("Чтение завершено");
+
         }
     }
 }

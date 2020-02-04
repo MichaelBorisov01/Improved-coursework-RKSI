@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace ConsoleApp3
 {
-    class Zap:Sale, IWritableObject
+    class Zap:Sale, IWritableObject, IReadbleObject
     {
         private string name;
         private float price;
@@ -118,35 +118,25 @@ namespace ConsoleApp3
             Console.WriteLine($"Hазвание автозапчасти: {name} \n   Закупочная цена: {price}\n  Кол-во запчастей на складе: {kolvo_specific}");
             Console.WriteLine("============================================");
         }
-    public string getName()
-    {
-        return name;
-    }
-
-    public float getPrice()
-    {
-        return price;
-    }
-
-    public int getKolvo_specific()
-    {
-        return kolvo_specific;
-    }
 
 
 
-
-
-        public void fileWriterZap(string prefix, SaveManager man)
+        public string getName()
         {
-            
+            return name;
         }
 
-        public void fileWriterSale(string prefix, SaveManager man)
+        public float getPrice()
         {
-
-             
+            return price;
         }
+
+        public int getKolvo_specific()
+        {
+            return kolvo_specific;
+        }
+         
+ 
 
         public void fileWriterKat(string prefix, SaveManager man)
         {
@@ -161,6 +151,7 @@ namespace ConsoleApp3
                 man.WriteObject($"{prefix}\\{prefix}kat{j}", kats[j]);
             }
         }
+
 
         public void Write(string path, SaveManager man)
         {

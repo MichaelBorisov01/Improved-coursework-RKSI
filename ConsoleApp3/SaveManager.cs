@@ -18,7 +18,7 @@ namespace ConsoleApp3
         void Write(string path, SaveManager man);
     }
 
-    class SaveManager: ISaveManager
+    class SaveManager : ISaveManager
     {
         FileInfo file;
         DirectoryInfo directory;
@@ -37,7 +37,7 @@ namespace ConsoleApp3
 
         public void WriteObject(string path, IWritableObject obj)
         {
-            file = new FileInfo(Path.Combine(directory.FullName, path+".txt"));
+            file = new FileInfo(Path.Combine(directory.FullName, path + ".txt"));
             file.CreateText().Close();
             obj.Write(path, this);
         }

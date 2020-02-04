@@ -23,11 +23,12 @@ namespace ConsoleApp3
     }
     class LoadManager : ILoadManager
     {
+        public DirectoryInfo directory;
         FileInfo file;
         StreamReader input;
-        public LoadManager(string filename)
+        public LoadManager(string dirname)
         {
-            file = new FileInfo(filename);
+            directory = Directory.CreateDirectory(dirname);
             input = null;
         }
 
@@ -36,7 +37,7 @@ namespace ConsoleApp3
             return loader.Load(this);
         }
 
-        public void BeginRead()
+        public void BeginRead(string filename)
         {
             if (input != null)
                 throw new IOException("Load Error");
@@ -62,6 +63,11 @@ namespace ConsoleApp3
                 throw new IOException("Load Error");
 
             input.Close();
+        }
+
+        public void ReadObject(string path, IReadbleObject obj)
+        {
+            file = new FileInfo(Path.Combine(directory.FullName, path + ".txt"));
         }
     }
 }

@@ -54,17 +54,18 @@ namespace ConsoleApp3
         //}
 
 
-        //READ
+       
+            
+            //READ
 
         public void fileReaderZap(string filePath)
         {
             StreamReader sr = new StreamReader("DIR\\"+filePath + ".txt");
             Console.WriteLine("==========Запчасть==========");
             Console.WriteLine(sr.ReadToEnd());
-
-
             sr.Close();
         }
+
         public void fileReaderSale(string filePath)
         {
             StreamReader sr = new StreamReader("DIR\\" + filePath + ".txt");
